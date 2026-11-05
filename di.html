@@ -12,121 +12,134 @@
 <meta property="og:image" content="https://teo10a.github.io/orange-studio-portfolio/media/showreel_poster.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&display=swap">
 <style>
 :root{
-  --page:#F4F4F2; --paper:#FFFFFF; --ink:#1A1A1A; --sub:#57595E; --faint:#8A8D93;
-  --line:#E4E4E1; --accent:#B4530E;
+  --page:#F7F2E9; --paper:#FFFDF9; --ink:#14100D; --sub:#5C544D; --faint:#7A7169;
+  --line:#E8E1D6; --accent:#B9501D;
+  --serif:'Nanum Myeongjo',serif;
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--page);color:var(--ink);font-family:Pretendard,-apple-system,system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
-a{color:var(--accent);text-decoration:none}
-a:hover{text-decoration:underline}
-::selection{background:rgba(180,83,14,.16)}
+body{margin:0;background:var(--page);color:var(--ink);font-family:Pretendard,-apple-system,system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word}
+a{color:var(--accent);text-decoration:none;transition:color .15s}
+a:hover{text-decoration:underline;text-underline-offset:2px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+::selection{background:rgba(185,80,29,.16)}
 
-.toolbar{max-width:760px;margin:0 auto;padding:22px 28px 0;display:flex;justify-content:flex-end;gap:10px}
-.toolbar a,.toolbar button{font-size:12.5px;color:var(--sub);border:1px solid var(--line);background:var(--paper);padding:7px 14px;border-radius:6px;cursor:pointer;font-family:inherit}
+.toolbar{max-width:760px;margin:0 auto;padding:24px 32px 0;display:flex;justify-content:flex-end;gap:8px}
+.toolbar a,.toolbar button{font-size:13px;color:var(--sub);border:1px solid var(--line);background:var(--paper);padding:8px 12px;border-radius:8px;cursor:pointer;font-family:inherit;transition:color .15s,border-color .15s}
 .toolbar a:hover,.toolbar button:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
 
-.sheet{max-width:760px;margin:14px auto 60px;background:var(--paper);border:1px solid var(--line);border-radius:10px;box-shadow:0 1px 3px rgba(0,0,0,.04);padding:56px 60px}
+.sheet{max-width:760px;margin:16px auto 64px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:56px}
 
-.head{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap;padding-bottom:26px;border-bottom:2px solid var(--ink)}
-.head h1{font-size:30px;font-weight:800;margin:0 0 6px;letter-spacing:-.01em}
-.head .role{font-size:14.5px;color:var(--sub);margin:0}
-.contact{text-align:right;font-size:13px;color:var(--sub);display:flex;flex-direction:column;gap:4px}
+.head{padding-bottom:24px;border-bottom:1px solid var(--ink)}
+.head h1{font-family:var(--serif);font-size:32px;font-weight:700;line-height:1.2;margin:0 0 8px}
+.head .role{font-size:14px;color:var(--sub);margin:0}
+.contact{margin-top:16px;display:flex;flex-wrap:wrap;gap:4px 12px;font-size:13px;color:var(--sub)}
 .contact a{color:var(--sub)}
 .contact a:hover{color:var(--accent)}
 
-section{margin-top:32px}
-h2.sec{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--ink);text-transform:uppercase;margin:0 0 14px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+section{display:grid;grid-template-columns:96px minmax(0,1fr);column-gap:24px;margin-top:24px;padding-top:24px;border-top:1px solid var(--line)}
+.head+section{border-top:0;margin-top:4px}
+section>*{grid-column:2}
+section>h2.sec{grid-column:1;grid-row:1/span 20;font-family:var(--serif);font-size:14px;font-weight:700;line-height:1.5;margin:0;padding-top:1px;color:var(--ink)}
 
-.summary p{font-size:14px;line-height:1.85;color:#333;margin:0}
+.summary p{font-size:14px;line-height:1.8;color:var(--ink);margin:0}
 
-.entry{display:grid;grid-template-columns:112px 1fr;gap:18px;padding:12px 0}
+.entry{display:grid;grid-template-columns:1fr auto;grid-template-areas:"what when";column-gap:16px;padding:12px 0}
+.entry:first-of-type{padding-top:0}
 .entry+.entry{border-top:1px solid var(--line)}
-.entry .when{font-size:12px;color:var(--faint);padding-top:2px;white-space:nowrap}
-.entry .what b{font-size:14.5px;font-weight:700;color:var(--ink)}
-.entry .what .org{font-size:12.5px;color:var(--sub);display:block;margin-top:2px}
-.entry .what p{font-size:13px;color:#4a4c50;margin:6px 0 0;line-height:1.7}
+.entry:last-child,.work:last-child{padding-bottom:0}
+.entry .when{grid-area:when;font-size:12px;color:var(--faint);padding-top:2px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.entry .what{grid-area:what}
+.entry .what b{font-size:15px;font-weight:600;color:var(--ink)}
+.entry .what .org{font-size:13px;color:var(--sub);display:block;margin-top:2px}
+.entry .what p{font-size:13px;color:var(--sub);margin:4px 0 0;line-height:1.7}
 
 .worklist{display:flex;flex-direction:column}
-.work{display:grid;grid-template-columns:1fr auto;gap:8px 16px;padding:14px 0;align-items:start}
+.work{display:grid;grid-template-columns:1fr auto;column-gap:16px;padding:16px 0;align-items:start}
+.work:first-child{padding-top:0}
 .work+.work{border-top:1px solid var(--line)}
-.work .tag{display:inline-block;font-size:10.5px;font-weight:700;color:var(--accent);letter-spacing:.06em;margin-right:8px;text-transform:uppercase}
-.work h3{display:inline;font-size:14px;font-weight:600;color:var(--ink)}
-.work .info{grid-column:1;font-size:12px;color:var(--sub);margin-top:3px}
-.work .desc{grid-column:1;font-size:12.5px;color:#4a4c50;margin:6px 0 0;line-height:1.7;max-width:520px}
-.work .stats{grid-column:1;font-size:11.5px;color:var(--accent);font-weight:600;margin:6px 0 0;letter-spacing:.01em}
-.work .meta{grid-column:2;text-align:right;font-size:11.5px;color:var(--faint);white-space:nowrap}
-.work .meta a{font-size:11.5px}
+.work .tag{display:inline-block;font-size:12px;font-weight:500;color:var(--faint);margin-right:8px}
+.work h3{display:inline;font-size:15px;font-weight:600;color:var(--ink)}
+.work .info{grid-column:1;font-size:13px;color:var(--sub);margin-top:4px}
+.work .desc{grid-column:1;font-size:13px;color:var(--sub);margin:4px 0 0;line-height:1.7;max-width:520px}
+.work .stats{grid-column:1;font-size:12px;color:var(--ink);font-weight:500;margin:8px 0 0;font-variant-numeric:tabular-nums}
+.work .meta{grid-column:2;grid-row:1;text-align:right;font-size:12px;color:var(--faint);white-space:nowrap;padding-top:2px;font-variant-numeric:tabular-nums}
+.work .meta a{font-size:12px}
+.films .work{padding:12px 0}
+.films .work:first-child{padding-top:0}
+.films h3{font-size:14px}
+.films .info{display:inline;margin:0 0 0 8px}
 
-.skillgroup+.skillgroup{margin-top:18px}
-.skillgroup h4{font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin:0 0 8px}
-.skillgroup ul{margin:0;padding:0;list-style:none;display:grid;gap:7px}
-.skillgroup li{font-size:13px;color:#333;padding-left:14px;position:relative;line-height:1.65}
-.skillgroup li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:1px;background:var(--accent)}
+.skillgroup+.skillgroup{margin-top:16px}
+.skillgroup h4{font-size:13px;font-weight:600;color:var(--ink);margin:0 0 4px}
+.skillgroup ul{margin:0;padding:0;list-style:none;display:grid;gap:4px}
+.skillgroup li{font-size:13px;color:var(--sub);padding-left:16px;position:relative;line-height:1.7}
+.skillgroup li::before{content:"";position:absolute;left:0;top:11px;width:8px;height:1px;background:var(--faint)}
 
-.tags{display:flex;flex-wrap:wrap;gap:8px}
-.tags span{font-size:12px;color:var(--sub);border:1px solid var(--line);border-radius:20px;padding:5px 13px}
+.tags{font-size:13px;color:var(--sub);line-height:1.7}
+.tags span+span::before{content:" · ";color:var(--faint)}
 
-.foot{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-size:11.5px;color:var(--faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
-
-.ba-grid{display:flex;flex-direction:column;gap:18px}
+.foot{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-size:12px;color:var(--faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.ba-grid{display:flex;flex-direction:column;gap:16px}
 .ba{margin:0;break-inside:avoid}
-.ba-pair{display:grid;grid-template-columns:1fr 1fr;gap:6px}
-.ba-pair div{position:relative;aspect-ratio:16/9;background:#1A1A1A;overflow:hidden;border-radius:3px}
+.ba-pair{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ba-pair div{position:relative;aspect-ratio:16/9;background:var(--ink);overflow:hidden;border-radius:4px}
 .ba-pair img{width:100%;height:100%;object-fit:cover;display:block}
-.ba-pair span{position:absolute;left:8px;bottom:8px;font-size:10.5px;color:#F4F4F2;background:rgba(26,26,26,.68);padding:3px 8px;border-radius:3px}
-.ba figcaption{font-size:12px;color:var(--sub);margin-top:6px}
-.ba-more{font-size:12.5px;margin:14px 0 0}
-
+.ba-pair span{position:absolute;left:8px;bottom:8px;font-size:11px;color:#F7F2E9;background:rgba(20,16,13,.7);padding:2px 8px;border-radius:4px}
+.ba figcaption{font-size:12px;color:var(--sub);margin-top:8px}
+.ba-more{font-size:13px;margin:16px 0 0}
 @media (max-width:640px){
-  .toolbar{padding:16px 16px 0}
-  .sheet{margin:10px auto 40px;padding:34px 22px;border-radius:0;border-left:0;border-right:0}
-  .head{flex-direction:column}
-  .contact{text-align:left}
-  .entry{grid-template-columns:1fr}
-  .entry .when{padding-top:0}
+  .toolbar{padding:16px 16px 0;flex-wrap:wrap}
+  .sheet{margin:8px auto 40px;padding:32px 20px;border-radius:0;border-left:0;border-right:0}
+  .head h1{font-size:28px}
+  section{grid-template-columns:minmax(0,1fr)}
+  section>*,section>h2.sec{grid-column:1}
+  section>h2.sec{grid-row:auto;margin-bottom:12px}
+  .entry{grid-template-columns:1fr;grid-template-areas:"when" "what"}
+  .entry .when{padding-top:0;margin-bottom:2px}
   .work{grid-template-columns:1fr}
-  .work .meta{text-align:left;grid-column:1}
-  .skills{grid-template-columns:1fr}
+  .work .meta{grid-column:1;grid-row:auto;text-align:left;padding-top:0;margin-top:4px;white-space:normal}
+  .films .info{display:block;margin:2px 0 0}
 }
 
 @page{size:A4;margin:10mm 12mm}
 @media print{
   body{background:#fff;line-height:1.45;-webkit-print-color-adjust:exact;print-color-adjust:exact}
   .toolbar{display:none}
-  .sheet{box-shadow:none;border:0;margin:0;max-width:100%;padding:0;border-radius:0}
-  .head{padding-bottom:12px}
+  .sheet{background:#fff;border:0;margin:0;max-width:100%;padding:0;border-radius:0}
+  .head{padding-bottom:10px}
   .head h1{font-size:24px;margin-bottom:2px}
-  .head .role{font-size:12px}
-  .contact{font-size:10.5px;gap:1px}
-  section{margin-top:11px}
-  h2.sec{font-size:10px;margin-bottom:6px;padding-bottom:4px}
-  .summary p{font-size:10.2px;line-height:1.55}
-  .entry{grid-template-columns:86px 1fr;gap:10px;padding:4px 0;break-inside:avoid}
-  .entry .when{font-size:9.5px}
-  .entry .what b{font-size:11.5px}
-  .entry .what .org{font-size:9.5px}
-  .entry .what p{font-size:10px;line-height:1.5;margin-top:2px}
-  .work{padding:5px 0;gap:1px 12px;break-inside:avoid}
-  .work h3{font-size:11.5px}
-  .work .tag{font-size:8.5px}
+  .head .role{font-size:11px}
+  .contact{margin-top:6px;font-size:9.5px;gap:0 12px}
+  section{grid-template-columns:64px 1fr;column-gap:12px;margin-top:8px;padding-top:8px}
+  section>h2.sec{font-size:10.5px}
+  .summary p{font-size:10px;line-height:1.55}
+  .entry{padding:4px 0;break-inside:avoid}
+  .entry .when{font-size:9px;padding-top:1px}
+  .entry .what b{font-size:11px}
+  .entry .what .org{font-size:9.5px;margin-top:0}
+  .entry .what p{font-size:9.5px;line-height:1.5;margin-top:1px}
+  .work{padding:5px 0;break-inside:avoid}
+  .work h3{font-size:11px}
+  .work .tag{font-size:9px;margin-right:6px}
   .work .info{font-size:9.5px;margin-top:1px}
-  .work .desc{font-size:9.6px;line-height:1.45;margin-top:2px;max-width:none}
-  .work .stats{font-size:9.5px;margin-top:3px}
-  .work .meta,.work .meta a{font-size:9px}
+  .work .desc{font-size:9.5px;line-height:1.45;margin-top:2px;max-width:none}
+  .work .stats{font-size:9px;margin-top:2px}
+  .work .meta,.work .meta a{font-size:9px;padding-top:1px}
   .films .worklist{display:grid;grid-template-columns:1fr 1fr;column-gap:16px}
-  .films .work{padding:4px 0;border-top:0!important}
-  .skillgroup+.skillgroup{margin-top:5px}
-  .skillgroup h4{font-size:9px;margin-bottom:3px}
-  .skillgroup ul{gap:2px}
-  .skillgroup li{font-size:9.6px;line-height:1.4}
-  .skillgroup li::before{top:7px}
-  .tags{gap:5px}
-  .tags span{font-size:9.5px;padding:2px 9px}
+  .films .work{padding:3px 0;border-top:0!important}
+  .films h3{font-size:10.5px}
+  .skillgroup+.skillgroup{margin-top:4px}
+  .skillgroup h4{font-size:9.5px;margin-bottom:1px}
+  .skillgroup ul{gap:1px}
+  .skillgroup li{font-size:9.5px;line-height:1.4;padding-left:12px}
+  .skillgroup li::before{top:7px;width:6px}
+  .tags{font-size:9.5px}
   .ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 12px}
   .ba figcaption{font-size:9px;margin-top:2px}
-  .ba-pair span{font-size:8px;padding:1px 5px;left:4px;bottom:4px}
+  .ba-pair span{font-size:8px;padding:1px 4px;left:4px;bottom:4px}
   .ba-more{font-size:9.5px;margin-top:6px;break-before:avoid}
   h2.sec{break-after:avoid}
   .foot{margin-top:6px;padding-top:4px;font-size:8.5px;break-before:avoid}
@@ -160,12 +173,12 @@ h2.sec{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--ink);text
   </div>
 
   <section class="summary">
-    <h2 class="sec">Summary</h2>
+    <h2 class="sec">소개</h2>
     <p>다중 카메라·혼합광 촬영본의 톤을 맞추는 컬러 작업을 주로 합니다. DaVinci Resolve Studio로 행사·라이브·캐릭터 영상을 그레이딩하며, 2026 부산국제록페스티벌에서는 출연 8팀, 약 20곡 라이브 클립의 LUT와 룩을 설계했습니다. 색온도가 낮은 호텔 조명과 무대 LED가 섞인 컨벤션 촬영본을 자연스러운 스킨톤 기준으로 정리하고, 캐릭터·코스튬은 공식 설정색을 기준으로 맞춥니다. 영화 현장 조명부에서 시작해, 소스가 어떤 빛 아래에서 찍혔는지 읽고 그레이딩합니다.</p>
   </section>
 
   <section>
-    <h2 class="sec">Education</h2>
+    <h2 class="sec">학력</h2>
     <div class="entry">
       <div class="when">2023 – 2029</div>
       <div class="what"><b>성균관대학교 영상학과</b><span class="org">휴학 중 · 2027년 3월 3학년 복학 · 2029년 2월 졸업 예정</span><p>학점 3.67 / 4.5</p></div>
@@ -173,7 +186,7 @@ h2.sec{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--ink);text
   </section>
 
   <section>
-    <h2 class="sec">Experience</h2>
+    <h2 class="sec">경력</h2>
     <div class="entry">
       <div class="when">2026</div>
       <div class="what"><b>라이브 클립 LUT·룩 설계 (외주 · 원격)</b><span class="org">2026 부산국제록페스티벌 / Noisy Neighborhood</span><p>출연 8팀, 약 20곡 라이브 클립의 LUT·룩 설계와 편집 보조.</p></div>
@@ -189,7 +202,7 @@ h2.sec{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--ink);text
   </section>
 
   <section>
-    <h2 class="sec">Projects</h2>
+    <h2 class="sec">프로젝트</h2>
     <div class="entry">
       <div class="when">2025 – 현재</div>
       <div class="what"><b>FUR:RAID 미디어팀 팀장</b><span class="org">그니크리에이티브 주관 800명 규모 서브컬처 호텔 컨벤션 · 영상 제작 동인 PRODUCTION GAL 비디오 크루 소속으로 미디어팀 운영</span><p>2025년 사전 티저 기획부터 현장 촬영, 편집, 컬러, 모션, 엔딩크레딧까지 미디어팀을 꾸려 총괄. 2026년에는 티저 조연출을 맡고 공식 리캡과 현장 당일 리캡 3편, 단체 댄스 공식 영상 촬영을 총괄. 미디어팀 10명의 근무 시프트를 직접 작성해 행사 촬영에 공백이 없도록 배치하고, 촬영 인원의 컨디션까지 고려해 전체 일정을 관리.</p></div>
@@ -201,7 +214,7 @@ h2.sec{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--ink);text
   </section>
 
   <section>
-    <h2 class="sec">Before / After</h2>
+    <h2 class="sec">보정 전후</h2>
     <div class="ba-grid">
       <figure class="ba">
         <div class="ba-pair"><div><img src="https://teo10a.github.io/orange-studio-portfolio/img/Still%202026-08-17%20230237_1.3.1.jpg" alt="자연광 + 난색 피부톤 그레이딩 보정 전" loading="lazy"><span>보정 전</span></div><div><img src="https://teo10a.github.io/orange-studio-portfolio/img/Still%202026-08-17%20233431_1.4.3.jpg" alt="자연광 + 난색 피부톤 그레이딩 보정 후" loading="lazy"><span>보정 후</span></div></div>
@@ -224,7 +237,7 @@ h2.sec{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--ink);text
   </section>
 
   <section>
-    <h2 class="sec">Selected Work</h2>
+    <h2 class="sec">주요 작업</h2>
     <div class="worklist">
 
       <div class="work">
@@ -275,32 +288,32 @@ h2.sec{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--ink);text
   </section>
 
   <section class="films">
-    <h2 class="sec">Film Works</h2>
+    <h2 class="sec">영화 현장</h2>
     <div class="worklist">
 
       <div class="work">
-        <div><span class="tag">졸업작품 스태프</span><h3>Gift</h3><div class="info">성균관대학교 영상학과 졸업작품 · 제작부</div></div>
+        <div><h3>Gift</h3><div class="info">성균관대학교 영상학과 졸업작품 · 제작부</div></div>
       </div>
 
       <div class="work">
-        <div><span class="tag">졸업작품 스태프</span><h3>Heading</h3><div class="info">성균관대학교 영상학과 졸업작품 · 연출부 · 제작부</div></div>
+        <div><h3>Heading</h3><div class="info">성균관대학교 영상학과 졸업작품 · 연출부 · 제작부</div></div>
       </div>
 
       <div class="work">
-        <div><span class="tag">졸업작품 스태프</span><h3>마감</h3><div class="info">성균관대학교 영상학과 졸업작품 · 조명부</div></div>
+        <div><h3>마감</h3><div class="info">성균관대학교 영상학과 졸업작품 · 조명부</div></div>
       </div>
 
       <div class="work">
-        <div><span class="tag">학과 작품</span><h3>Wrapping Paper</h3><div class="info">성균관대학교 영상학과 작품 · 조명부</div></div>
+        <div><h3>Wrapping Paper</h3><div class="info">성균관대학교 영상학과 작품 · 조명부</div></div>
       </div>
     </div>
   </section>
 
   <section>
-    <h2 class="sec">Skills</h2>
+    <h2 class="sec">기술</h2>
 
     <div class="skillgroup">
-      <h4>Color Grading</h4>
+      <h4>컬러 그레이딩</h4>
       <ul>
         <li>다중 카메라·혼합광 촬영본의 스킨톤 매칭</li>
         <li>S-Log2/3 · V-Log · C-Log 소스를 Rec.709 / Gamma 2.4로 변환·그레이딩</li>
@@ -312,7 +325,7 @@ h2.sec{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--ink);text
     </div>
 
     <div class="skillgroup">
-      <h4>Tools</h4>
+      <h4>툴</h4>
       <ul>
         <li>편집·컬러 — Premiere Pro, DaVinci Resolve Studio (컬러 그레이딩, LUT 설계)</li>
         <li>모션·디자인 — After Effects, Illustrator, Photoshop, Figma</li>
@@ -321,7 +334,7 @@ h2.sec{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--ink);text
     </div>
 
     <div class="skillgroup">
-      <h4>Lighting</h4>
+      <h4>조명</h4>
       <ul>
         <li>조명감독 5편 · 조명부 7편 참여</li>
         <li>시네마틱 라이팅 플랜 수립 및 실행 — 촬영 전 콘티 단계에서 광원 위치·색온도·명암비를 설계하고 현장에서 실시간 조정</li>
@@ -332,7 +345,7 @@ h2.sec{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--ink);text
     </div>
 
     <div class="skillgroup">
-      <h4>Camera</h4>
+      <h4>카메라</h4>
       <ul>
         <li>Sony — FX6, FX3, α7 III · α7 IV · α7 V 등 소니 미러리스 전반</li>
         <li>Canon — EOS C50, EOS R5 Mark II, EOS R6 Mark III</li>
@@ -340,7 +353,7 @@ h2.sec{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--ink);text
     </div>
 
     <div class="skillgroup">
-      <h4>Production &amp; Direction</h4>
+      <h4>제작·연출</h4>
       <ul>
         <li>행사 미디어팀 근무 시프트 설계 — 촬영 공백 없는 인원 배치</li>
         <li>사전 티저 기획부터 현장 촬영, 편집, 모션, 엔딩크레딧까지 전 과정 프로젝트 총괄</li>
@@ -351,7 +364,7 @@ h2.sec{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--ink);text
   </section>
 
   <section>
-    <h2 class="sec">Clients</h2>
+    <h2 class="sec">클라이언트</h2>
     <div class="tags">
       <span>성균관대학교</span><span>POCLANOS</span><span>성균관대 청랑</span><span>Noisy Neighborhood</span>
     </div>
