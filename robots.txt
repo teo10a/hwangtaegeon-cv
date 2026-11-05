@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://teo10a.github.io/hwangtaegeon-cv/sitemap.xml
