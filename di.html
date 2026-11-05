@@ -3,7 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>황태건 이력서</title>
+<title>황태건 이력서 · 컬러 / DI</title>
+<meta name="description" content="다중 카메라·혼합광 촬영본의 톤을 맞추는 컬러 작업 중심의 황태건 이력서입니다.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="황태건 이력서 · 컬러 / DI">
+<meta property="og:description" content="다중 카메라·혼합광 촬영본의 톤을 맞추는 컬러 작업 중심의 황태건 이력서입니다.">
+<meta property="og:url" content="https://teo10a.github.io/hwangtaegeon-cv/di.html">
+<meta property="og:image" content="https://teo10a.github.io/orange-studio-portfolio/media/showreel_poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
 :root{
@@ -84,16 +91,53 @@ h2.sec{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--ink);text
   .skills{grid-template-columns:1fr}
 }
 
+@page{size:A4;margin:10mm 12mm}
 @media print{
-  body{background:#fff}
+  body{background:#fff;line-height:1.45;-webkit-print-color-adjust:exact;print-color-adjust:exact}
   .toolbar{display:none}
-  .sheet{box-shadow:none;border:0;margin:0 auto;max-width:100%}
+  .sheet{box-shadow:none;border:0;margin:0;max-width:100%;padding:0;border-radius:0}
+  .head{padding-bottom:12px}
+  .head h1{font-size:24px;margin-bottom:2px}
+  .head .role{font-size:12px}
+  .contact{font-size:10.5px;gap:1px}
+  section{margin-top:11px}
+  h2.sec{font-size:10px;margin-bottom:6px;padding-bottom:4px}
+  .summary p{font-size:10.2px;line-height:1.55}
+  .entry{grid-template-columns:86px 1fr;gap:10px;padding:4px 0;break-inside:avoid}
+  .entry .when{font-size:9.5px}
+  .entry .what b{font-size:11.5px}
+  .entry .what .org{font-size:9.5px}
+  .entry .what p{font-size:10px;line-height:1.5;margin-top:2px}
+  .work{padding:5px 0;gap:1px 12px;break-inside:avoid}
+  .work h3{font-size:11.5px}
+  .work .tag{font-size:8.5px}
+  .work .info{font-size:9.5px;margin-top:1px}
+  .work .desc{font-size:9.6px;line-height:1.45;margin-top:2px;max-width:none}
+  .work .stats{font-size:9.5px;margin-top:3px}
+  .work .meta,.work .meta a{font-size:9px}
+  .films .worklist{display:grid;grid-template-columns:1fr 1fr;column-gap:16px}
+  .films .work{padding:4px 0;border-top:0!important}
+  .skillgroup+.skillgroup{margin-top:5px}
+  .skillgroup h4{font-size:9px;margin-bottom:3px}
+  .skillgroup ul{gap:2px}
+  .skillgroup li{font-size:9.6px;line-height:1.4}
+  .skillgroup li::before{top:7px}
+  .tags{gap:5px}
+  .tags span{font-size:9.5px;padding:2px 9px}
+  .ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 12px}
+  .ba figcaption{font-size:9px;margin-top:2px}
+  .ba-pair span{font-size:8px;padding:1px 5px;left:4px;bottom:4px}
+  .ba-more{font-size:9.5px;margin-top:6px;break-before:avoid}
+  h2.sec{break-after:avoid}
+  .foot{margin-top:6px;padding-top:4px;font-size:8.5px;break-before:avoid}
+  .skillgroup{break-inside:avoid}
 }
 </style>
 </head>
 <body>
 
 <div class="toolbar">
+  <a href="https://teo10a.github.io/orange-studio-portfolio/media/showreel.mp4" target="_blank" rel="noopener">쇼릴 보기 ↗</a>
   <a href="https://teo10a.github.io/orange-studio-portfolio/" target="_blank" rel="noopener">포트폴리오 보기 ↗</a>
   <button onclick="window.print()">PDF로 저장 / 인쇄</button>
 </div>
@@ -109,7 +153,8 @@ h2.sec{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--ink);text
       <a href="tel:010-2708-0677">010-2708-0677</a>
       <a href="mailto:teodrive44@gmail.com">teodrive44@gmail.com</a>
       <span>성균관대학교 영상학과</span>
-      <a href="https://teo10a.github.io/orange-studio-portfolio/" target="_blank" rel="noopener">orange-studio-portfolio ↗</a>
+      <a href="https://teo10a.github.io/orange-studio-portfolio/" target="_blank" rel="noopener">포트폴리오 ↗</a>
+      <a href="https://teo10a.github.io/orange-studio-portfolio/media/showreel.mp4" target="_blank" rel="noopener">쇼릴 ↗</a>
     </div>
   </div>
 
@@ -121,8 +166,8 @@ h2.sec{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--ink);text
   <section>
     <h2 class="sec">Education</h2>
     <div class="entry">
-      <div class="when">2023 입학</div>
-      <div class="what"><b>성균관대학교 영상학과</b><span class="org">휴학 중 · 2027년 3월 3학년 복학 예정</span><p>학점 3.67 / 4.5</p></div>
+      <div class="when">2023 – 2029</div>
+      <div class="what"><b>성균관대학교 영상학과</b><span class="org">휴학 중 · 2027년 3월 3학년 복학 · 2029년 2월 졸업 예정</span><p>학점 3.67 / 4.5</p></div>
     </div>
   </section>
 
@@ -134,7 +179,7 @@ h2.sec{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--ink);text
     </div>
     <div class="entry">
       <div class="when">2024</div>
-      <div class="what"><b>미디어컨텐츠국 국원</b><span class="org">성균관대학교 제56대 총학생회 SURE!</span><p>총학생회 공식 축제 · 홍보 영상 4편 촬영 및 제작.</p></div>
+      <div class="what"><b>미디어컨텐츠국 국원</b><span class="org">성균관대학교 제56대 총학생회 SURE</span><p>총학생회 공식 축제 · 홍보 영상 4편 촬영 및 제작.</p></div>
     </div>
     <div class="entry">
       <div class="when">2023 – 2024</div>
@@ -196,15 +241,8 @@ h2.sec{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--ink);text
       </div>
 
       <div class="work">
-        <div><span class="tag">캐릭터</span><h3>퍼슈트 Vtuber 오스카 커버 〈너에게 닿기를〉</h3><div class="info">오스카 · 촬영 · 편집 (총괄)</div>
-          <p class="desc">촬영과 편집을 총괄했습니다. 캐릭터의 공식 설정색을 기준으로 컬러를 맞추되, 시네마틱한 필름룩을 구현했습니다. 이 작업을 계기로 같은 Vtuber의 펀딩형 팬미팅 촬영 팀에 섭외되었고, 개인 댄스 영상 총연출을 맡아 진행 중입니다 (2026년 공개 예정).</p>
-        </div>
-        <div class="meta">2026 · 조회수 10,536 · <a href="https://www.youtube.com/watch?v=MzXM5cuDHzc" target="_blank" rel="noopener">보기 ↗</a></div>
-      </div>
-
-      <div class="work">
         <div><span class="tag">행사</span><h3>FUR:RAID 2025 공식 리캡</h3><div class="info">FUR:RAID · 촬영·편집·컬러·모션(총괄)</div>
-          <p class="desc">3일간 진행된 서브컬처 이벤트 현장을 2분 30초 리캡 영상으로 제작했습니다. 일정 시프트와 셀렉 가이드를 작성하여 미디어팀을 직접 통솔하고, 사전 티저 기획, 현장 촬영, 편집, 컬러 그레이딩, 모션그래픽, 엔딩크레딧까지 전체 제작 과정을 총괄했습니다. 작년과 달리 인원이 800명으로 늘어나고, 호텔 특유의 색온도가 낮은 조명과 무대 조명의 색온도가 다양한 조명이 섞여 세밀한 톤 조정이 요구된 촬영이었습니다.</p>
+          <p class="desc">3일간 진행된 서브컬처 이벤트 현장을 2분 30초 리캡 영상으로 제작했습니다. 일정 시프트와 셀렉 가이드를 작성하여 미디어팀을 직접 통솔하고, 사전 티저 기획, 현장 촬영, 편집, 컬러 그레이딩, 모션그래픽, 엔딩크레딧까지 전체 제작 과정을 총괄했습니다. 전년보다 인원이 800명으로 늘어나고, 호텔 특유의 색온도가 낮은 조명과 무대 조명의 색온도가 다양한 조명이 섞여 세밀한 톤 조정이 요구된 촬영이었습니다.</p>
           <p class="stats">사진팀 5명 · 영상팀 2명 · 현장 3일 · 티저·리캡·엔딩크레딧 3종 납품</p>
         </div>
         <div class="meta">2025 · 조회수 1,746 · <a href="https://www.youtube.com/watch?v=4tfuB4IzK4s" target="_blank" rel="noopener">보기 ↗</a></div>
@@ -235,7 +273,7 @@ h2.sec{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--ink);text
     </div>
   </section>
 
-  <section>
+  <section class="films">
     <h2 class="sec">Film Works</h2>
     <div class="worklist">
 
@@ -310,7 +348,7 @@ h2.sec{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--ink);text
   <section>
     <h2 class="sec">Clients</h2>
     <div class="tags">
-      <span>성균관대학교</span><span>총학생회 SURE</span><span>POCLANOS</span><span>청랑</span><span>Noisy Neighborhood</span><span>블낫블</span><span>퓨처피어클럽</span><span>아스라이</span><span>베이루트택시</span><span>에디앤더브릭스</span><span>김푸름</span><span>시인을위하여</span><span>아사달</span>
+      <span>성균관대학교</span><span>총학생회 SURE</span><span>POCLANOS</span><span>청랑</span><span>Noisy Neighborhood</span>
     </div>
   </section>
 
