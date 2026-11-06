@@ -295,15 +295,15 @@
    "hasDefinedTerm": [
     {
      "@type": "DefinedTerm",
-     "name": "편집·컬러 — Premiere Pro, DaVinci Resolve Studio (컬러 그레이딩, LUT 설계)"
+     "name": "편집·컬러: Premiere Pro, DaVinci Resolve Studio (컬러 그레이딩, LUT 설계)"
     },
     {
      "@type": "DefinedTerm",
-     "name": "모션·디자인 — After Effects, Illustrator, Photoshop, Figma"
+     "name": "모션·디자인: After Effects, Illustrator, Photoshop, Figma"
     },
     {
      "@type": "DefinedTerm",
-     "name": "사진 — Lightroom"
+     "name": "사진: Lightroom"
     }
    ],
    "name": "툴"
@@ -314,11 +314,11 @@
    "hasDefinedTerm": [
     {
      "@type": "DefinedTerm",
-     "name": "Sony — FX6, FX3, α7 III · α7 IV · α7 V 등 소니 미러리스 전반"
+     "name": "Sony: FX6, FX3, α7 III · α7 IV · α7 V 등 소니 미러리스 전반"
     },
     {
      "@type": "DefinedTerm",
-     "name": "Canon — EOS C50, EOS R5 Mark II, EOS R6 Mark III"
+     "name": "Canon: EOS C50, EOS R5 Mark II, EOS R6 Mark III"
     }
    ],
    "name": "카메라"
@@ -333,7 +333,7 @@
     },
     {
      "@type": "DefinedTerm",
-     "name": "시네마틱 라이팅 플랜 수립 및 실행 — 촬영 전 콘티 단계에서 광원 위치·색온도·명암비를 설계하고 현장에서 실시간 조정"
+     "name": "시네마틱 라이팅 플랜 수립 및 실행: 촬영 전 콘티 단계에서 광원 위치·색온도·명암비를 설계하고 현장에서 실시간 조정"
     },
     {
      "@type": "DefinedTerm",
@@ -387,7 +387,7 @@
    "hasDefinedTerm": [
     {
      "@type": "DefinedTerm",
-     "name": "행사 미디어팀 근무 시프트 설계 — 촬영 공백 없는 인원 배치"
+     "name": "행사 미디어팀 근무 시프트 설계, 촬영 공백 없는 인원 배치"
     },
     {
      "@type": "DefinedTerm",
@@ -840,8 +840,10 @@
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--page);color:var(--ink);font-family:Pretendard,-apple-system,system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word}
-a{color:var(--accent);text-decoration:none;transition:color .15s}
-a:hover{text-decoration:underline;text-underline-offset:2px}
+a{color:var(--accent);text-decoration:none;transition:color .15s cubic-bezier(.2,.7,.2,1)}
+/* 한국어 줄 끝에 낱말 하나만 남지 않게(본문), 제목은 줄 길이를 고르게 */
+p,li,.desc,.org,.info{text-wrap:pretty}
+h1,h2,h3{text-wrap:balance}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
 ::selection{background:rgba(185,80,29,.16)}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
@@ -849,7 +851,6 @@ a:hover{text-decoration:underline;text-underline-offset:2px}
 
 .toolbar{max-width:760px;margin:0 auto;padding:24px 32px 0;display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap}
 .toolbar a,.toolbar button{display:inline-flex;align-items:center;min-height:44px;font-size:13px;color:var(--sub);border:1px solid var(--line);background:var(--paper);padding:0 12px;border-radius:8px;cursor:pointer;font-family:inherit;transition:color .15s,border-color .15s}
-.toolbar a:hover,.toolbar button:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
 
 .sheet{max-width:760px;margin:16px auto 64px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:56px}
 
@@ -859,7 +860,6 @@ a:hover{text-decoration:underline;text-underline-offset:2px}
 .head .note{font-size:13px;color:var(--sub);margin:4px 0 0}
 .contact{font-style:normal;display:flex;flex-direction:column;align-items:flex-end;gap:2px;font-size:13px;color:var(--sub);text-align:right;font-variant-numeric:tabular-nums}
 .contact a{color:var(--ink)}
-.contact a:hover{color:var(--accent)}
 .contact .links a{color:var(--accent)}
 
 section{display:grid;grid-template-columns:96px minmax(0,1fr);column-gap:24px;margin-top:24px;padding-top:24px;border-top:1px solid var(--line)}
@@ -899,7 +899,7 @@ section>h2.sec{grid-column:1;grid-row:1/span 20;font-family:var(--serif);font-si
 .skillgroup h3{font-size:13px;font-weight:600;color:var(--ink);margin:0 0 4px}
 .skillgroup ul{margin:0;padding:0;list-style:none;display:grid;gap:4px}
 .skillgroup li{font-size:13px;color:var(--sub);padding-left:16px;position:relative;line-height:1.7}
-.skillgroup li::before{content:"";position:absolute;left:0;top:11px;width:8px;height:1px;background:var(--faint)}
+.skillgroup li::before{content:"";position:absolute;left:0;top:12px;width:8px;height:1px;background:var(--faint)}
 
 .tags{font-size:13px;color:var(--sub);line-height:1.7;margin:0}
 .tags span+span::before{content:" · ";color:var(--faint)}
@@ -910,11 +910,17 @@ section>h2.sec{grid-column:1;grid-row:1/span 20;font-family:var(--serif);font-si
 .ba-pair{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .ba-pair div{position:relative;aspect-ratio:16/9;background:var(--ink);overflow:hidden;border-radius:4px}
 .ba-pair img{width:100%;height:100%;object-fit:cover;display:block}
-.ba-pair span{position:absolute;left:8px;bottom:8px;font-size:11px;color:#F7F2E9;background:rgba(20,16,13,.7);padding:2px 8px;border-radius:4px}
+.ba-pair span{position:absolute;left:8px;bottom:8px;font-size:12px;color:#F7F2E9;background:rgba(20,16,13,.7);padding:2px 8px;border-radius:4px}
 .ba figcaption{font-size:12px;color:var(--sub);margin-top:8px}
 .ba-more{font-size:13px;margin:16px 0 0}
 
 .foot{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-size:12px;color:var(--faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+/* hover가 있는 기기에서만 (키보드 포커스는 위의 :focus-visible) */
+@media (hover:hover){
+  a:hover{text-decoration:underline;text-underline-offset:2px}
+  .toolbar a:hover,.toolbar button:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+  .contact a:hover{color:var(--accent)}
+}
 @media (max-width:640px){
   .toolbar{padding:16px 16px 0;justify-content:flex-start}
   .sheet{margin:8px auto 40px;padding:32px 20px;border-radius:0;border-left:0;border-right:0}
@@ -940,41 +946,41 @@ section>h2.sec{grid-column:1;grid-row:1/span 20;font-family:var(--serif);font-si
   body{background:#fff;line-height:1.45;-webkit-print-color-adjust:exact;print-color-adjust:exact}
   .toolbar{display:none}
   .sheet{background:#fff;border:0;margin:0;max-width:100%;padding:0;border-radius:0}
-  .head{padding-bottom:10px;align-items:flex-end}
+  .head{padding-bottom:8px;align-items:flex-end}
   .head h1{font-size:24px;margin-bottom:2px}
   .head .role{font-size:11px}
-  .head .note{font-size:10.5px;margin-top:1px}
-  .contact{font-size:10.5px;gap:0}
+  .head .note{font-size:11px;margin-top:1px}
+  .contact{font-size:11px;gap:0}
   section{grid-template-columns:64px 1fr;column-gap:12px;margin-top:8px;padding-top:8px}
-  section>h2.sec{font-size:10.5px}
+  section>h2.sec{font-size:11px}
   .summary p{font-size:11px;line-height:1.55}
   .entry{padding:4px 0;break-inside:avoid}
   .entry .when{font-size:10px;padding-top:1px}
   .entry .what h3{font-size:12px}
-  .entry .what .org{font-size:10.5px;margin-top:0}
-  .entry .what p{font-size:10.5px;line-height:1.5;margin-top:1px}
-  .work{padding:5px 0;break-inside:avoid}
+  .entry .what .org{font-size:11px;margin-top:0}
+  .entry .what p{font-size:11px;line-height:1.5;margin-top:1px}
+  .work{padding:4px 0;break-inside:avoid}
   .work h3{font-size:12px}
-  .work .tag{font-size:10px;margin-right:6px}
-  .work .info{font-size:10.5px;margin-top:1px}
-  .work .desc{font-size:10.5px;line-height:1.45;margin-top:2px;max-width:none}
+  .work .tag{font-size:10px;margin-right:8px}
+  .work .info{font-size:11px;margin-top:1px}
+  .work .desc{font-size:11px;line-height:1.45;margin-top:2px;max-width:none}
   .work .stats{font-size:10px;margin-top:2px}
   .work .meta,.work .meta a{font-size:10px;padding-top:1px}
   .films .worklist{display:grid;grid-template-columns:1fr 1fr;column-gap:16px}
-  .films .work{padding:3px 0;border-top:0!important}
-  .films h3{font-size:11.5px}
+  .films .work{padding:4px 0;border-top:0!important}
+  .films h3{font-size:12px}
   .skillgroup+.skillgroup{margin-top:4px}
-  .skillgroup h3{font-size:10.5px;margin-bottom:1px}
+  .skillgroup h3{font-size:11px;margin-bottom:1px}
   .skillgroup ul{gap:1px}
-  .skillgroup li{font-size:10.5px;line-height:1.4;padding-left:12px}
-  .skillgroup li::before{top:7px;width:6px}
-  .tags{font-size:10.5px}
+  .skillgroup li{font-size:11px;line-height:1.4;padding-left:12px}
+  .skillgroup li::before{top:8px;width:8px}
+  .tags{font-size:11px}
   .ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 12px}
   .ba figcaption{font-size:10px;margin-top:2px}
   .ba-pair span{font-size:8px;padding:1px 4px;left:4px;bottom:4px}
-  .ba-more{font-size:10.5px;margin-top:6px;break-before:avoid}
+  .ba-more{font-size:11px;margin-top:4px;break-before:avoid}
   h2.sec{break-after:avoid}
-  .foot{margin-top:6px;padding-top:4px;font-size:9.5px;break-before:avoid}
+  .foot{margin-top:8px;padding-top:4px;font-size:10px;break-before:avoid}
   .skillgroup{break-inside:avoid}
 }
 </style>
@@ -1094,7 +1100,7 @@ section>h2.sec{grid-column:1;grid-row:1/span 20;font-family:var(--serif);font-si
   <div class="skillgroup">
     <h3>제작·연출</h3>
     <ul>
-      <li>행사 미디어팀 근무 시프트 설계 — 촬영 공백 없는 인원 배치</li>
+      <li>행사 미디어팀 근무 시프트 설계, 촬영 공백 없는 인원 배치</li>
       <li>사전 티저 기획부터 현장 촬영, 편집, 모션, 엔딩크레딧까지 전 과정 프로젝트 총괄</li>
       <li>현장 동시다발 상황에서의 실시간 인력 조율 및 앵글·동선 조정</li>
       <li>촬영 당일 편집·컬러·납품 가능</li>
@@ -1103,23 +1109,23 @@ section>h2.sec{grid-column:1;grid-row:1/span 20;font-family:var(--serif);font-si
   <div class="skillgroup">
     <h3>툴</h3>
     <ul>
-      <li>편집·컬러 — Premiere Pro, DaVinci Resolve Studio (컬러 그레이딩, LUT 설계)</li>
-      <li>모션·디자인 — After Effects, Illustrator, Photoshop, Figma</li>
-      <li>사진 — Lightroom</li>
+      <li>편집·컬러: Premiere Pro, DaVinci Resolve Studio (컬러 그레이딩, LUT 설계)</li>
+      <li>모션·디자인: After Effects, Illustrator, Photoshop, Figma</li>
+      <li>사진: Lightroom</li>
     </ul>
   </div>
   <div class="skillgroup">
     <h3>카메라</h3>
     <ul>
-      <li>Sony — FX6, FX3, α7 III · α7 IV · α7 V 등 소니 미러리스 전반</li>
-      <li>Canon — EOS C50, EOS R5 Mark II, EOS R6 Mark III</li>
+      <li>Sony: FX6, FX3, α7 III · α7 IV · α7 V 등 소니 미러리스 전반</li>
+      <li>Canon: EOS C50, EOS R5 Mark II, EOS R6 Mark III</li>
     </ul>
   </div>
   <div class="skillgroup">
     <h3>조명</h3>
     <ul>
       <li>조명감독 5편 · 조명부 7편 참여</li>
-      <li>시네마틱 라이팅 플랜 수립 및 실행 — 촬영 전 콘티 단계에서 광원 위치·색온도·명암비를 설계하고 현장에서 실시간 조정</li>
+      <li>시네마틱 라이팅 플랜 수립 및 실행: 촬영 전 콘티 단계에서 광원 위치·색온도·명암비를 설계하고 현장에서 실시간 조정</li>
       <li>형광등·무대 LED·자연광이 혼합된 환경에서의 조명 대응 및 노출 관리</li>
       <li>움직임이 큰 피사체 (안무, 행진 등) 촬영을 위한 사전 동선 기반 조명 설계</li>
       <li>인터뷰·롱테이크 촬영에서 표정·피부 톤이 안정적으로 유지되는 조명 설계 및 구현</li>
